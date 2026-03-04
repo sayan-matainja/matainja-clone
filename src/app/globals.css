@@ -1,26 +1,524 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-orange: var(--brand-orange);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.omsc-blockquote-large .omsc-blockquote-inner {
+  font-size: 20px;
+  line-height: 30px;
+  padding: 26px 26px 34px;
+}
+
+.omsc-blockquote-large .omsc-blockquote-inner:after {
+  font-size: 20px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  --primary: #2c3e6b;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #333333;
+  --muted: #888888;
+  --muted-foreground: #ffffff;
+  --accent: #e8a020;
+  --accent-foreground: #ffffff;
+  --brand-dark: #1e2a4a;
+  --brand-orange: #e8a020;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', 'Open Sans', Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.logo-menu-wrapper {
+  display: table;
+  width: 100%;
+}
+
+.menu-sticky-node-wrapper {
+  width: 100%;
+}
+
+.menu-sticky-node {
+  position: relative;
+}
+
+.menu-sticky-node.menu-stuck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header-logo-menu-wrapper {
+  background-color: #ffffff;
+}
+
+.logo-menu-wrapper .logo-box,
+.logo-menu-wrapper .menu-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.logo-menu-wrapper .logo-box {
+  padding: 20px 60px 20px 0;
+}
+
+.menu-stuck .logo-menu-wrapper .logo-box {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo-menu-wrapper .menu-box {
+  text-align: left;
+}
+
+.primary-menu,
+.primary-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+}
+
+.primary-menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.primary-menu > li {
+  float: left;
+  position: relative;
+}
+
+.primary-menu a {
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s, background 0.3s;
+}
+
+.primary-menu > li > a {
+  padding: 20px 20px 17px 20px;
+  border-bottom: 3px solid transparent;
+}
+
+.primary-menu > li > a:hover,
+.primary-menu > li.sfHover > a {
+  border-bottom-color: #ff9833;
+  color: #ff9833;
+}
+
+.primary-menu > li.current-menu-item > a,
+.primary-menu > li.current_page_item > a {
+  border-bottom-color: #ff9833;
+  color: #ff9833;
+}
+
+.menu-stuck .primary-menu a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu-stuck .primary-menu > li > a {
+  padding-bottom: 7px;
+}
+
+.primary-menu.show-dropdown-symbol > li.menu-parent-item > a:after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  margin-left: 0.6em;
+  line-height: 1;
+}
+
+.primary-menu .sub-menu {
+  position: absolute;
+  left: -1px;
+  top: 100%;
+  display: none;
+  white-space: nowrap;
+  z-index: 500;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.primary-menu li:hover > .sub-menu {
+  display: block;
+}
+
+.primary-menu .sub-menu a {
+  padding: 0.2em 0.8em;
+}
+
+.primary-menu .navlink-inactive,
+.primary-menu .navlink-active {
+  background-image: none;
+}
+
+.navlink-inactive {
+  background-image: linear-gradient(#e8a020, #e8a020);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  display: inline-block;
+  position: relative;
+}
+
+.navlink-inactive:hover {
+  background-size: 100% 2px;
+}
+
+.navlink-active {
+  background-image: linear-gradient(#e8a020, #e8a020);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  display: inline-block;
+  position: relative;
+}
+
+.omsc-blockquote {
+  margin: 18px 0 0;
+}
+
+.omsc-blockquote-inner {
+  background: #f5f5f5;
+  padding: 22px 22px 28px;
+  border-radius: 4px;
+  font-style: italic;
+  color: #e8a020;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  position: relative;
+}
+
+.omsc-blockquote-inner:after {
+  content: "\f10e";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 16px;
+  bottom: 8px;
+  font-size: 22px;
+  line-height: 22px;
+  color: #e8a020;
+}
+
+.about-two-col p {
+  margin: 0 0 12px;
+}
+
+.about-two-col ul {
+  margin: 10px 0 18px;
+}
+
+.about-two-col li {
+  margin-bottom: 6px;
+}
+
+.omsc-blockquote-footer {
+  margin-top: 14px;
+}
+
+.omsc-blockquote-author {
+  font-style: normal;
+  font-size: 12px;
+  color: #b3b3b3;
+  display: block;
+  text-align: center;
+}
+
+.wp-like-list {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.wp-like-list li {
+  margin: 0 0 6px;
+}
+
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 28px;
+}
+
+@media (max-width: 767px) {
+  .about-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wp-container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wp-container-pad84 {
+  padding-left: 84px;
+  padding-right: 84px;
+}
+
+@media (max-width: 767px) {
+  .wp-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .wp-container-pad84 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-social-icons a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  position: relative;
+  text-decoration: none;
+}
+
+.footer-social-icons a:before {
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-family: FontAwesome;
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-social-icons.dark-social-icons a:before {
+  color: #555;
+}
+
+.footer-social-icons a:hover:before {
+  color: #111;
+}
+
+.social-icon-facebook:before { content: "\f09a"; }
+.social-icon-googleplus:before { content: "\f0d5"; }
+.social-icon-twitter:before { content: "\f099"; }
+
+#whatsapp-chat-widget {
+  display: block;
+}
+
+.wa-chat-box {
+  background-color: white;
+  z-index: 16000160 !important;
+  margin-bottom: 60px;
+  width: 360px;
+  position: fixed !important;
+  bottom: 50px !important;
+  right: 50px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  font: 400 normal 15px/1.3 -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+}
+
+.wa-chat-box-header {
+  height: 100px;
+  max-height: 100px;
+  min-height: 100px;
+  background-color: #0a5f54;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.wa-chat-box-brand {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.wa-chat-box-brand-text {
+  margin-left: 20px;
+}
+
+.wa-chat-box-brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.wa-chat-box-brand-subtitle {
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 4px;
+}
+
+.wa-chat-bubble-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.wa-chat-bubble-close-btn img {
+  pointer-events: none;
+}
+
+.wa-chat-box-content {
+  background: url('https://user-images.githubusercontent.com/99333830/277576700-059390fb-4890-40dc-8a77-34942ff2e9db.png');
+}
+
+.wa-chat-box-content-chat {
+  background-color: white;
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.wa-chat-box-content-chat-brand {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.wa-chat-box-content-chat-welcome {
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 4px;
+  color: rgb(17, 17, 17);
+}
+
+.wa-chat-box-send {
+  background-color: white;
+}
+
+.wa-chat-box-content-send-btn {
+  text-decoration: none;
+  color: rgb(255, 255, 255) !important;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 25px;
+  border-style: none;
+  background-color: #ff9833 !important;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.wa-chat-box-content-send-btn-icon {
+  width: 16px;
+  height: 16px;
+  fill: rgb(255, 255, 255);
+  z-index: 1;
+  flex: 0 0 16px;
+}
+
+.wa-chat-box-content-send-btn-text {
+  margin-left: 8px;
+  margin-right: 8px;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+}
+
+.wa-chat-box-poweredby {
+  text-align: center;
+  font: 400 normal 15px/1.3 -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+  margin-bottom: 15px;
+  margin-top: -10px;
+  font-style: italic;
+  font-size: 12px;
+  color: lightgray;
+}
+
+#wa-widget-send-button {
+  margin: 0 0 50px 0 !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: fixed !important;
+  z-index: 16000160 !important;
+  bottom: 0 !important;
+  text-align: center !important;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 25px;
+  visibility: visible;
+  transition: none !important;
+  background-color: #ff9833;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  right: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-messenger-svg-whatsapp {
+  fill: white;
+  width: 41px;
+  height: 50px;
+  stroke: none;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .wa-chat-box {
+    width: auto;
+    position: fixed !important;
+    right: 20px !important;
+    left: 20px !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
 }

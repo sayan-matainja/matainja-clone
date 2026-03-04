@@ -1,0 +1,256 @@
+/* extracted subset of Matainja WP theme + OlevMedia shortcodes, scoped to About page */
+
+.about-wp-scope {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.about-wp-scope p {
+  margin: 1em 0;
+}
+
+.about-wp-scope h1,
+.about-wp-scope h2,
+.about-wp-scope h3,
+.about-wp-scope h4,
+.about-wp-scope h5,
+.about-wp-scope h6 {
+  margin: 2em 0 1em 0;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.about-wp-scope h1 {
+  font-size: 250%;
+}
+
+.about-wp-scope h2 {
+  font-size: 180%;
+}
+
+.about-wp-scope h3 {
+  font-size: 140%;
+}
+
+.about-wp-scope h4 {
+  font-size: 125%;
+}
+
+.about-wp-scope .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-wp-scope .container-inner {
+  margin: 0 20px;
+}
+
+.about-wp-scope .clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.about-wp-scope .omsc-clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.about-wp-scope .omsc-one-half,
+.about-wp-scope .omsc-one-third,
+.about-wp-scope .omsc-two-third,
+.about-wp-scope .omsc-one-fourth,
+.about-wp-scope .omsc-three-fourth,
+.about-wp-scope .omsc-one-fifth,
+.about-wp-scope .omsc-two-fifth,
+.about-wp-scope .omsc-three-fifth,
+.about-wp-scope .omsc-four-fifth,
+.about-wp-scope .omsc-one-sixth,
+.about-wp-scope .omsc-five-sixth {
+  float: left;
+  margin: 0 4% 0 0;
+}
+
+.about-wp-scope .omsc-one-half.omsc-last,
+.about-wp-scope .omsc-one-third.omsc-last,
+.about-wp-scope .omsc-two-third.omsc-last,
+.about-wp-scope .omsc-one-fourth.omsc-last,
+.about-wp-scope .omsc-three-fourth.omsc-last,
+.about-wp-scope .omsc-one-fifth.omsc-last,
+.about-wp-scope .omsc-two-fifth.omsc-last,
+.about-wp-scope .omsc-three-fifth.omsc-last,
+.about-wp-scope .omsc-four-fifth.omsc-last,
+.about-wp-scope .omsc-one-sixth.omsc-last,
+.about-wp-scope .omsc-five-sixth.omsc-last {
+  margin-right: 0;
+}
+
+.about-wp-scope .omsc-one-half {
+  width: 48%;
+}
+
+.about-wp-scope .omsc-one-third {
+  width: 30.66%;
+}
+
+.about-wp-scope .omsc-two-third {
+  width: 65.33%;
+}
+
+.about-wp-scope .omsc-divider {
+  margin: 1em auto;
+  border-style: none;
+  border-width: 1px;
+  border-top-style: solid;
+  opacity: 0.3;
+}
+
+.about-wp-scope .omsc-divider.omsc-style-dashed {
+  border-top-style: dashed;
+}
+
+.about-wp-scope .omsc-divider.omsc-border-small {
+  width: 100%;
+}
+
+.about-wp-scope .omsc-full-width-section {
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.about-wp-scope .omsc-full-width-section-inner {
+  padding: 0;
+}
+
+.about-wp-scope .omsc-full-width-section-content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-wp-scope blockquote,
+.about-wp-scope .omsc-blockquote {
+  margin: 1em 0;
+}
+
+.about-wp-scope .omsc-blockquote-inner {
+  background: rgba(102, 102, 102, 0.05);
+  background: linear-gradient(to bottom, rgba(102, 102, 102, 0.03) 0%, rgba(102, 102, 102, 0.08) 100%);
+  padding: 16px 16px 26px;
+  border-radius: 3px;
+  position: relative;
+  font-style: italic;
+}
+
+.about-wp-scope .omsc-blockquote-inner:after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: 10px;
+  width: 35px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzMCI+PHBvbHlnb24gZmlsbD0iI2ZmOTgzMyIgcG9pbnRzPSIwLDAgMTUsMCwgMTUsMTUgMCwzMCIvPjxwb2x5Z29uIGZpbGw9IiNmZjk4MzMiIHBvaW50cz0iMjAsMCAzNSwwLCAzNSwxNSAyMCwzMCIvPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+.about-wp-scope .omsc-blockquote-author {
+  color: #9c9c9c;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.about-wp-scope .omsc-blockquote-footer {
+  margin-top: 10px;
+}
+
+.about-wp-scope .omsc-dropcap.omsc-bgcolor-theme.omsc-with-bg-color.omsc-shape-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  background-color: #ff9833;
+  color: #fff;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.about-wp-scope .omsc-dropcap.omsc-bgcolor-theme.omsc-with-bg-color.omsc-shape-circle i {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.about-wp-scope .omsc-icon {
+  font-family: FontAwesome;
+}
+
+.about-wp-scope h4 {
+  font-size: 125%;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 2em 0 1em 0;
+}
+
+.about-wp-scope .omsc-counter {
+  text-align: center;
+}
+
+.about-wp-scope .omsc-counter-number {
+  font-size: 350%;
+}
+
+.about-wp-scope .omsc-counter.size-large .omsc-counter-number {
+  font-size: 600%;
+  line-height: 1.3;
+}
+
+.about-wp-scope .omsc-counter.size-large .omsc-counter-title {
+  font-size: 120%;
+}
+
+.about-wp-scope .omsc-logos {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.about-wp-scope .omsc-logos .omsc-logos-item {
+  display: inline-block;
+  padding: 1.5em 2em;
+  text-align: center;
+}
+
+.about-wp-scope .omsc-logos .omsc-logos-item img {
+  display: inline-block;
+  vertical-align: middle;
+  transition: opacity 0.3s;
+}
+
+.about-wp-scope .omsc-logos .omsc-logos-item a:hover img {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 767px) {
+  .about-wp-scope {
+    min-width: 320px;
+    word-wrap: break-word;
+  }
+
+  .about-wp-scope .omsc-one-half,
+  .about-wp-scope .omsc-one-third,
+  .about-wp-scope .omsc-two-third,
+  .about-wp-scope .omsc-one-fourth,
+  .about-wp-scope .omsc-three-fourth,
+  .about-wp-scope .omsc-one-fifth,
+  .about-wp-scope .omsc-two-fifth,
+  .about-wp-scope .omsc-three-fifth,
+  .about-wp-scope .omsc-four-fifth,
+  .about-wp-scope .omsc-one-sixth,
+  .about-wp-scope .omsc-five-sixth {
+    float: none;
+    margin: 1em 0;
+    width: auto;
+  }
+}
