@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div>
-        <div className="wp-container wp-container-pad84">
+        <div className="wp-container wp-container-pad54">
           <div className="flex items-center" style={{ height: "81.8px" }}>
 
             <div className="flex items-center w-full" style={{ height: "61px" }}>

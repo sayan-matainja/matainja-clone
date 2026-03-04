@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
 
       {/* Trustpilot — centered, bordered */}
-      <div className="border-t border-gray-100 py-4 flex justify-center">
+      <div className="py-4 flex justify-center">
         <a
           href="https://www.trustpilot.com/review/matainja.com"
           target="_blank"

@@ -139,14 +139,14 @@
   padding: 16px 16px 26px;
   border-radius: 3px;
   position: relative;
-  font-style: italic;
+  /* font-style: italic;   */
 }
 
 .about-wp-scope .omsc-blockquote-inner:after {
   content: "";
   position: absolute;
   left: 18px;
-  bottom: 10px;
+  bottom: -16px;
   width: 35px;
   height: 30px;
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzMCI+PHBvbHlnb24gZmlsbD0iI2ZmOTgzMyIgcG9pbnRzPSIwLDAgMTUsMCwgMTUsMTUgMCwzMCIvPjxwb2x5Z29uIGZpbGw9IiNmZjk4MzMiIHBvaW50cz0iMjAsMCAzNSwwLCAzNSwxNSAyMCwzMCIvPjwvc3ZnPg==');
