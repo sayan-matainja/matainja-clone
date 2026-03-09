@@ -1,9 +1,9 @@
 "use client";
 
-import StatsCounter from "@/components/StatsCounter";
+import StatsCounter from "../../components/StatsCounter";
 import { useEffect } from "react";
 import Image from "next/image";
-import "@/styles/brand-colors.css";
+import "../../styles/brand-colors.css";
 import "./about-professional.css";
 
 const services = [

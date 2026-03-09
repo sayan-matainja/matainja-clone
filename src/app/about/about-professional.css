@@ -1,0 +1,163 @@
+/* Professional IT Company About Page Styles */
+
+.tech-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced animations for professional look */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tech-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.tech-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Professional hover effects */
+.tech-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(68, 143, 245, 0.15);
+}
+
+/* Button enhancements */
+.tech-button-primary,
+.tech-button-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-button-primary::before,
+.tech-button-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.tech-button-primary:hover::before,
+.tech-button-accent:hover::before {
+  left: 100%;
+}
+
+/* Testimonial enhancements */
+.tech-testimonial {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-testimonial::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 120px;
+  color: rgba(232, 160, 32, 0.1);
+  font-family: Georgia, serif;
+}
+
+/* Service icon animations */
+.tech-service-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-service-icon::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.tech-service-icon:hover::after {
+  animation: shimmer 0.6s ease;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Professional stats styling */
+.tech-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tech-stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 1rem;
+  border: 1px solid rgba(68, 143, 245, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tech-stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(68, 143, 245, 0.1);
+  border-color: rgba(68, 143, 245, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tech-hero-section {
+    padding: 4rem 0;
+  }
+  
+  .tech-section {
+    padding: 3rem 0;
+  }
+}

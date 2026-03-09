@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import "@/styles/brand-colors.css";
+import "../styles/brand-colors.css";
 
 const stats = [
   { end: 7000, suffix: "+", label: "Jobs Completed", color: "from-accent-orange to-accent-orange-dark" },
