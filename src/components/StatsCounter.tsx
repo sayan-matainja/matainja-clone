@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import "@/styles/brand-colors.css";
 
 const stats = [
-  { end: 7000, suffix: "+", label: "jobs", color: "#e8a020" },
-  { end: 6300, suffix: "+", label: "Web Application", color: "#e85050" },
-  { end: 700,  suffix: "+", label: "Mobile Application", color: "#4a9fd4" },
+  { end: 7000, suffix: "+", label: "Jobs Completed", color: "from-accent-orange to-accent-orange-dark" },
+  { end: 6300, suffix: "+", label: "Web Applications", color: "from-primary-blue to-primary-blue-dark" },
+  { end: 700,  suffix: "+", label: "Mobile Applications", color: "from-tech-gray to-tech-gray-light" },
 ];
 
 function useCountUp(end: number, duration = 2000, active: boolean) {
@@ -33,11 +34,18 @@ function useCountUp(end: number, duration = 2000, active: boolean) {
 function StatItem({ end, suffix, label, color, active }: { end: number; suffix: string; label: string; color: string; active: boolean }) {
   const count = useCountUp(end, 2000, active);
   return (
-    <div className="omsc-counter size-large" data-count={end} data-suffix={suffix} data-animation={2000}>
-      <div className="omsc-counter-number" style={{ color }}>
-        {count.toLocaleString()}{suffix}
+    <div className="tech-stat-item group">
+      <div className="relative inline-block">
+        <div className={`absolute inset-0 bg-gradient-to-r ${color} rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />
+        <div className={`relative bg-gradient-to-r ${color} bg-clip-text text-transparent`}>
+          <div className="text-5xl sm:text-6xl lg:text-7xl font-bold tech-stat-number">
+            {count.toLocaleString()}{suffix}
+          </div>
+        </div>
       </div>
-      <div className="omsc-counter-title">{label}</div>
+      <div className="mt-6 text-lg sm:text-xl font-semibold text-tech-gray group-hover:text-tech-dark transition-colors duration-300">
+        {label}
+      </div>
     </div>
   );
 }
@@ -56,23 +64,18 @@ export default function StatsCounter({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div ref={ref} className={className}>
-      <div className="omsc-one-third">
-        <StatItem {...stats[0]} active={active} />
-        <br />
-        <div className="clear" />
+    <div ref={ref} className={`${className || ''}`}>
+      <div className="tech-stats-grid">
+        {stats.map((stat, index) => (
+          <div 
+            key={stat.label}
+            className="tech-fade-in"
+            style={{ animationDelay: `${index * 150}ms` }}
+          >
+            <StatItem {...stat} active={active} />
+          </div>
+        ))}
       </div>
-      <div className="omsc-one-third">
-        <StatItem {...stats[1]} active={active} />
-        <br />
-        <div className="clear" />
-      </div>
-      <div className="omsc-one-third omsc-last">
-        <StatItem {...stats[2]} active={active} />
-        <br />
-        <div className="clear" />
-      </div>
-      <div className="omsc-clear" />
     </div>
   );
 }

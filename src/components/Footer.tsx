@@ -1,58 +1,92 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const footerNav = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Contact", href: "/contact" },
+];
+
+const capabilityItems = [
+  "Product Strategy",
+  "UI/UX & Prototyping",
+  "Web & Mobile Engineering",
+  "Maintenance & Scale",
+];
+
+const socialIcons = [
+  { className: "social-icon-facebook", href: "https://www.facebook.com/matainja", label: "Facebook" },
+  { className: "social-icon-googleplus", href: "https://plus.google.com/+MatainjaTechnologies", label: "Google+" },
+  { className: "social-icon-twitter", href: "https://twitter.com/matainja", label: "Twitter" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100">
-      <div className="wp-container wp-container-pad84" style={{ paddingTop: "28px", paddingBottom: "20px" }}>
-
-        {/* Logo + social row: logo left, social icons right with room for WhatsApp button */}
-        <div className="grid items-start" style={{ gridTemplateColumns: "1fr auto 160px", paddingRight: "0" }}>
-          {/* Logo */}
-          <Link href="/">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://www.matainja.com/wp-content/uploads/2016/10/logo-1.png"
-              alt="Matainja Technologies"
-              className="h-12 w-auto object-contain"
-            />
-          </Link>
-
-          {/* Social icons */}
-          <div className="footer-social-icons dark-social-icons">
-            <a href="https://www.facebook.com/matainja" target="_blank" rel="noopener noreferrer" className="social-icon-facebook" title="Facebook" aria-label="Facebook" />
-            <a href="https://plus.google.com/+MatainjaTechnologies" target="_blank" rel="noopener noreferrer" className="social-icon-googleplus" title="Google+" aria-label="Google+" />
-            <a href="https://twitter.com/matainja" target="_blank" rel="noopener noreferrer" className="social-icon-twitter" title="Twitter" aria-label="Twitter" />
+    <footer className="site-footer">
+      <div className="site-footer__halo" aria-hidden="true" />
+      <div className="site-footer__inner">
+        <div className="site-footer__grid">
+          <div className="site-footer__brand">
+            <Link href="/" className="footer-logo-link">
+              <Image
+                src="https://www.matainja.com/wp-content/uploads/2016/10/logo-1.png"
+                alt="Matainja Technologies"
+                width={160}
+                height={48}
+                className="footer-logo"
+              />
+            </Link>
+            <p>
+              Trusted design & engineering partners for ambitious brands worldwide. Born in Kolkata, collaborating
+              everywhere.
+            </p>
+            <div className="footer-social-icons dark-social-icons">
+              {socialIcons.map((icon) => (
+                <a key={icon.label} href={icon.href} target="_blank" rel="noopener noreferrer" className={icon.className} aria-label={icon.label} />
+              ))}
+            </div>
           </div>
-
-          {/* Empty col — reserves space for fixed WhatsApp button */}
-          <div />
+          <div className="site-footer__nav">
+            <h4>Navigate</h4>
+            <ul>
+              {footerNav.map((nav) => (
+                <li key={nav.label}>
+                  <Link href={nav.href}>{nav.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="site-footer__capability">
+            <h4>Capabilities</h4>
+            <ul>
+              {capabilityItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Copyright */}
-        <p className="text-gray-400 text-xs mt-2 mb-4">
-          Copyright &copy; 2018 Matainja Technologies. All rights reserved.
-        </p>
-
+        <div className="site-footer__meta">
+          <div className="footer-meta__copyright">
+            <span>© {new Date().getFullYear()} Matainja Technologies. All rights reserved.</span>
+          </div>
+          <div className="footer-meta__trust">
+            <span>Review us on</span>
+            <a
+              href="https://www.trustpilot.com/review/matainja.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="trustpilot-chip"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              Trustpilot
+            </a>
+          </div>
+        </div>
       </div>
-
-      {/* Trustpilot — centered, bordered */}
-      <div className="py-4 flex justify-center">
-        <a
-          href="https://www.trustpilot.com/review/matainja.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 border border-gray-300 px-5 py-2 text-sm text-gray-600 hover:border-gray-500 transition-colors"
-        >
-          Review us on
-          <span className="flex items-center gap-1 font-semibold" style={{ color: "#00b67a" }}>
-            <svg viewBox="0 0 24 24" fill="#00b67a" className="w-4 h-4">
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-            </svg>
-            Trustpilot
-          </span>
-        </a>
-      </div>
-
     </footer>
   );
 }

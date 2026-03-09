@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react"; 
@@ -10,10 +10,26 @@ const NAV_COLOR = "#448FF5";
 const mobileLinkCls = "block px-4 py-3 text-sm font-semibold hover:bg-gray-50 border-b border-gray-50";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(!isHome);
   const [portfolioOpen, setPortfolioOpen] = useState(false);
   const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false);
-  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isHome) {
+      return;
+    }
+
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
 
   function navLink(href: string) {
     const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
@@ -23,13 +39,27 @@ export default function Navbar() {
     ].join(" ");
   }
 
+  const isSolid = !isHome || hasScrolled;
+  const shouldGlass = isHome && !isSolid;
+
   function navColor(href: string): string {
     const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
+    if (shouldGlass) {
+      return isActive ? "#ffb347" : "#f9fbff";
+    }
     return isActive ? "#e8a020" : NAV_COLOR;
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+    <nav
+      className={`${
+        isHome ? "fixed top-0 left-0 w-full" : "sticky top-0"
+      } z-50 transition-all duration-500 ${
+        shouldGlass
+          ? "bg-white/10 border-white/20 backdrop-blur-xl text-white"
+          : "bg-white border-gray-100 shadow-md"
+      }`}
+    >
       <div>
         <div className="wp-container wp-container-pad54">
           <div className="flex items-center" style={{ height: "81.8px" }}>
