@@ -30,6 +30,12 @@ import {
 
   Shield,
 
+  Heart,
+
+  ShoppingCart,
+
+  DollarSign,
+
 } from "lucide-react";
 
 import "@/styles/brand-colors.css";
@@ -94,13 +100,13 @@ const companyStats: CompanyStat[] = [
 
   {
 
-    value: 7000,
+    value: 600,
 
     suffix: "+",
 
-    label: "Jobs",
+    label: "Strong Team",
 
-    detail: "Full-cycle deliveries across industries",
+    detail: "Experienced professionals dedicated to your success",
 
     accent: "#ffb347",
 
@@ -108,13 +114,13 @@ const companyStats: CompanyStat[] = [
 
   {
 
-    value: 6300,
+    value: 350,
 
     suffix: "+",
 
-    label: "Web Applications",
+    label: "Projects Delivered",
 
-    detail: "Custom platforms shipped to production",
+    detail: "Successful deployments across various industries",
 
     accent: "#ff6363",
 
@@ -122,13 +128,13 @@ const companyStats: CompanyStat[] = [
 
   {
 
-    value: 700,
+    value: 11,
 
     suffix: "+",
 
-    label: "Mobile Applications",
+    label: "Years Experience",
 
-    detail: "React Native, Flutter & native builds",
+    detail: "Building digital solutions since 2013",
 
     accent: "#5ec7ff",
 
@@ -138,20 +144,49 @@ const companyStats: CompanyStat[] = [
 
 
 
+const techLogos = [
+  // Frontend
+  { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", category: "Frontend" },
+  { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", category: "Frontend" },
+  { name: "TypeScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", category: "Frontend" },
+  { name: "Tailwind CSS", src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", category: "Frontend" },
+  
+  // Backend
+  { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", category: "Backend" },
+  { name: "PHP", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", category: "Backend" },
+  { name: "Laravel", src: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg", category: "Backend" },
+  { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", category: "Backend" },
+  
+  // Mobile
+  { name: "React Native", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", category: "Mobile" },
+  { name: "Flutter", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", category: "Mobile" },
+  { name: "iOS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg", category: "Mobile" },
+  { name: "Android", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg", category: "Mobile" },
+  
+  // Database
+  { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", category: "Database" },
+  { name: "PostgreSQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", category: "Database" },
+  { name: "MongoDB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", category: "Database" },
+  { name: "Redis", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg", category: "Database" },
+];
+
+const partnerLogos = [
+  { name: "LG", src: "/logos/LG_logo.svg" },
+  { name: "Nigerian Government", src: "/logos/nigerian_govt.svg" },
+  { name: "Ola Cabs", src: "/logos/Ola_Cabs_logo.svg" },
+  { name: "MP Government", src: "/logos/MP_Govt_Logo.svg" },
+  { name: "Hibbard Lawyers", src: "/logos/hibbard_lawyers_logo.svg" },
+  { name: "Hottie and Lord", src: "/logos/hottieandlord_logo.svg" },
+  { name: "MotorNet", src: "/logos/motornet_logo.png" },
+];
+
 const heroImages = [
-
   "https://www.matainja.com/wp-content/uploads/2020/07/banner_1.jpg",
-
   "https://www.matainja.com/wp-content/uploads/2020/07/banner_3.jpg",
-
   "https://www.matainja.com/wp-content/uploads/2020/07/banner_2.jpg",
-
   "https://www.matainja.com/wp-content/uploads/2023/10/banner_4.jpg",
-
   "https://www.matainja.com/wp-content/uploads/2023/10/banner_5.jpg",
-
   "https://www.matainja.com/wp-content/uploads/2016/10/new_web_banner_introw.png",
-
 ];
 
 
@@ -208,7 +243,7 @@ const processSteps = [
 
     description:
 
-      "Development Phase is more important ,First of all choose Framework and language according to Clients Requirements and assign to exprience team .",
+      "Development Phase is more important, First of all choose Framework and language according to Clients Requirements and assign to exprience team .",
 
     direction: "left",
 
@@ -222,7 +257,7 @@ const processSteps = [
 
     description:
 
-      "While develop module , our Quality Team test all completed module using different kind of testing tools, like unit test , selinium test etc.",
+      "While develop module, our Quality Team test all completed module using different kind of testing tools, like unit test , selinium test etc.",
 
     direction: "up",
 
@@ -282,24 +317,6 @@ const latestProjects = [
 
   {
 
-    title: "Motornet.ro",
-
-    href: "https://www.matainja.com/portfolio/motornet-ro/",
-
-    description: "Automotive marketplace with inventory syncing, dealer dashboards and finance integrations.",
-
-    category: "Automotive",
-
-    stack: "CodeIgniter • Solr",
-
-    image:
-
-      "https://www.matainja.com/wp-content/uploads/2019/04/Screenshot-2019-04-22-at-5.05.05-PM-676x451.png",
-
-  },
-
-  {
-
     title: "EMA – ERP SYSTEM",
 
     href: "https://www.matainja.com/portfolio/ema-erp-system/",
@@ -311,40 +328,6 @@ const latestProjects = [
     stack: "CodeIgniter • JSON",
 
     image: "https://www.matainja.com/wp-content/uploads/2017/03/EMA-ERP-676x451.png",
-
-  },
-
-  {
-
-    title: "Laravel Ecommerce  Website",
-
-    href: "https://www.matainja.com/portfolio/ecommerce-website-laravel/",
-
-    description: "Modern storefront UX with live inventory, promo engine and mobile-first checkout.",
-
-    category: "eCommerce",
-
-    stack: "Laravel • MySQL",
-
-    image:
-
-      "https://www.matainja.com/wp-content/uploads/2020/09/Screenshot-2020-09-15-at-3.56.19-PM-676x451.png",
-
-  },
-
-  {
-
-    title: "Digital Deck",
-
-    href: "https://www.matainja.com/portfolio/digital-deck/",
-
-    description: "Custom CMS for digital agencies to showcase services, testimonials and lead funnels.",
-
-    category: "Marketing",
-
-    stack: "WordPress • PHP",
-
-    image: "https://www.matainja.com/wp-content/uploads/2016/12/digital-deck1-676x451.jpg",
 
   },
 
@@ -608,44 +591,59 @@ export default function Home() {
 
         </div>
 
-        <div className="process-grid">
-
-          {processSteps.map((step, idx) => (
-
-            <div
-
-              key={step.title}
-
-              className={`process-card reveal-on-scroll direction-${step.direction}`}
-
-              style={{
-
-                transitionDelay: `${idx * 90}ms`,
-
-                // @ts-expect-error custom CSS variable for animation delay
-
-                "--process-delay": `${idx * 0.12}s`,
-
-              }}
-
-            >
-
-              <div className="process-card-head">
-
-                <span className="process-step-label">{String(idx + 1).padStart(2, "0")}</span>
-
-                <span className="process-icon">{step.icon}</span>
-
+        <div className="process-simple">
+          <div className="process-simple-row">
+            <div className="process-simple-item reveal-on-scroll" style={{ transitionDelay: "0ms" }}>
+              <div className="process-simple-header">
+                <span className="process-simple-number">01</span>
+                <span className="process-simple-icon"><Lightbulb /></span>
               </div>
-
-              <h3>{step.title}</h3>
-
-              <p>{step.description}</p>
-
+              <h3>Commited</h3>
+              <p>We believe listening is a crucial key factor of effectiveness. Thus, we listen carefully to have a firm grasp of your idea and goals.</p>
             </div>
-
-          ))}
-
+            <div className="process-simple-item reveal-on-scroll" style={{ transitionDelay: "90ms" }}>
+              <div className="process-simple-header">
+                <span className="process-simple-number">02</span>
+                <span className="process-simple-icon"><Workflow /></span>
+              </div>
+              <h3>Flow Chart</h3>
+              <p>According to client requirements, we create a flowchart and blueprint for all functionality, module structure, and database design.</p>
+            </div>
+            <div className="process-simple-item reveal-on-scroll" style={{ transitionDelay: "180ms" }}>
+              <div className="process-simple-header">
+                <span className="process-simple-number">03</span>
+                <span className="process-simple-icon"><PenSquare /></span>
+              </div>
+              <h3>Design</h3>
+              <p>Design is crucial nowadays. We provide good navigation system design and fast-loading modern HTML tags.</p>
+            </div>
+          </div>
+          <div className="process-simple-row">
+            <div className="process-simple-item reveal-on-scroll" style={{ transitionDelay: "270ms" }}>
+              <div className="process-simple-header">
+                <span className="process-simple-number">04</span>
+                <span className="process-simple-icon"><Laptop2 /></span>
+              </div>
+              <h3>Develop</h3>
+              <p>Development is key. We choose the framework and language based on client requirements and assign it to an experienced team.</p>
+            </div>
+            <div className="process-simple-item reveal-on-scroll" style={{ transitionDelay: "360ms" }}>
+              <div className="process-simple-header">
+                <span className="process-simple-number">05</span>
+                <span className="process-simple-icon"><Wrench /></span>
+              </div>
+              <h3>Optimization</h3>
+              <p>During module development, our Quality Team tests all completed modules using various tools like unit tests and Selenium tests.</p>
+            </div>
+            <div className="process-simple-item reveal-on-scroll" style={{ transitionDelay: "450ms" }}>
+              <div className="process-simple-header">
+                <span className="process-simple-number">06</span>
+                <span className="process-simple-icon"><Rocket /></span>
+              </div>
+              <h3>Deploy/Setup</h3>
+              <p>Finally, we set up and deploy on the client's server or hand over the source code.</p>
+            </div>
+          </div>
         </div>
 
       </section>
@@ -726,70 +724,46 @@ export default function Home() {
 
 
 
-        <div className="key-features-grid">
-
-          <div className="key-feature-card reveal-on-scroll" style={{ transitionDelay: "0ms" }}>
-
-            <div className="key-feature-icon">
-
+        <div className="key-features-simple">
+          <div className="key-feature-simple reveal-on-scroll" style={{ transitionDelay: "0ms" }}>
+            <div className="key-feature-simple-icon">
               <Zap />
-
             </div>
-
-            <h3>Get things done faster</h3>
-
-            <p>Focus, be persistent, and be consistent. It will help to get through your tasks as efficiently as possible.</p>
-
+            <div className="key-feature-simple-content">
+              <h3>Get things done faster</h3>
+              <p>Focus, be persistent, and be consistent. It will help to get through your tasks as efficiently as possible.</p>
+            </div>
           </div>
 
-
-
-          <div className="key-feature-card reveal-on-scroll" style={{ transitionDelay: "120ms" }}>
-
-            <div className="key-feature-icon">
-
+          <div className="key-feature-simple reveal-on-scroll" style={{ transitionDelay: "120ms" }}>
+            <div className="key-feature-simple-icon">
               <Sparkles />
-
             </div>
-
-            <h3>Clean and quality</h3>
-
-            <p>Yes, it&apos;s good practice to write clean code, but never at the expense of being able to deliver. The benefit of delivering a duct-taped product on time.</p>
-
+            <div className="key-feature-simple-content">
+              <h3>Clean and quality</h3>
+              <p>Yes, it&apos;s good practice to write clean code, but never at the expense of being able to deliver. The benefit of delivering a duct-taped product on time.</p>
+            </div>
           </div>
 
-
-
-          <div className="key-feature-card reveal-on-scroll" style={{ transitionDelay: "240ms" }}>
-
-            <div className="key-feature-icon">
-
+          <div className="key-feature-simple reveal-on-scroll" style={{ transitionDelay: "240ms" }}>
+            <div className="key-feature-simple-icon">
               <Clock />
-
             </div>
-
-            <h3>On time delivery</h3>
-
-            <p>Ultimately, Our team determines the project outcome. Motivated and enthusiastic resources can achieve to meet your project deadline.</p>
-
+            <div className="key-feature-simple-content">
+              <h3>On time delivery</h3>
+              <p>Ultimately, Our team determines the project outcome. Motivated and enthusiastic resources can achieve to meet your project deadline.</p>
+            </div>
           </div>
 
-
-
-          <div className="key-feature-card reveal-on-scroll" style={{ transitionDelay: "360ms" }}>
-
-            <div className="key-feature-icon">
-
+          <div className="key-feature-simple reveal-on-scroll" style={{ transitionDelay: "360ms" }}>
+            <div className="key-feature-simple-icon">
               <Shield />
-
             </div>
-
-            <h3>Support 3 Months</h3>
-
-            <p>We will take care if any bug founds and logical problems after launch website or apps. we will monitoring the data and Speed of page loading and any leak in code. Support 3 months free.</p>
-
+            <div className="key-feature-simple-content">
+              <h3>Support 3 Months</h3>
+              <p>We will take care if any bug founds and logical problems after launch website or apps. we will monitoring the data and Speed of page loading and any leak in code. Support 3 months free.</p>
+            </div>
           </div>
-
         </div>
 
       </section>
@@ -888,6 +862,46 @@ export default function Home() {
 
 
 
+      <section className="home-section home-trust">
+        <div className="section-header">
+          <span>Partners</span>
+          <h2>Trusted by leading companies and partners</h2>
+          <p className="section-subtext">
+            Working with industry leaders to deliver exceptional digital solutions
+          </p>
+        </div>
+        <div className="trust-slider-container">
+          <div className="trust-slider">
+            {/* First set of logos */}
+            {partnerLogos.map((partner, index) => (
+              <div key={`${partner.name}-1`} className="trust-logo-item reveal-on-scroll" style={{ transitionDelay: `${index * 100}ms` }}>
+                <Image
+                  src={partner.src}
+                  alt={`${partner.name} logo`}
+                  width={partner.name.includes('MP Government') || partner.name.includes('Nigerian Government') || partner.name.includes('Hottie and Lord') ? 180 : 120}
+                  height={partner.name.includes('MP Government') || partner.name.includes('Nigerian Government') || partner.name.includes('Hottie and Lord') ? 90 : 60}
+                  className={`trust-logo-image ${partner.name.includes('MP Government') || partner.name.includes('Nigerian Government') || partner.name.includes('Hottie and Lord') ? 'large-logo' : ''}`}
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {partnerLogos.map((partner, index) => (
+              <div key={`${partner.name}-2`} className="trust-logo-item">
+                <Image
+                  src={partner.src}
+                  alt={`${partner.name} logo`}
+                  width={partner.name.includes('MP Government') || partner.name.includes('Nigerian Government') || partner.name.includes('Hottie and Lord') ? 180 : 120}
+                  height={partner.name.includes('MP Government') || partner.name.includes('Nigerian Government') || partner.name.includes('Hottie and Lord') ? 90 : 60}
+                  className={`trust-logo-image ${partner.name.includes('MP Government') || partner.name.includes('Nigerian Government') || partner.name.includes('Hottie and Lord') ? 'large-logo' : ''}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
       <section className="home-section home-stats">
 
         <div className="stats-shell">
@@ -900,6 +914,129 @@ export default function Home() {
 
         </div>
 
+      </section>
+
+
+
+      <section className="home-section home-industries">
+        <div className="section-header">
+          <span>Industries</span>
+          <h2>Solutions for every industry</h2>
+          <p className="section-subtext">
+            Tailored digital solutions that drive success across diverse sectors
+          </p>
+        </div>
+        <div className="industries-grid">
+          <div className="industry-card reveal-on-scroll" style={{ transitionDelay: "0ms" }}>
+            <div className="industry-icon">
+              <Heart />
+            </div>
+            <h3>Healthcare</h3>
+            <p>Digital health platforms and patient management systems</p>
+          </div>
+          <div className="industry-card reveal-on-scroll" style={{ transitionDelay: "120ms" }}>
+            <div className="industry-icon">
+              <ShoppingCart />
+            </div>
+            <h3>E-commerce</h3>
+            <p>Online stores with modern UX and secure payment systems</p>
+          </div>
+          <div className="industry-card reveal-on-scroll" style={{ transitionDelay: "240ms" }}>
+            <div className="industry-icon">
+              <Rocket />
+            </div>
+            <h3>Education</h3>
+            <p>E-learning platforms and student management solutions</p>
+          </div>
+          <div className="industry-card reveal-on-scroll" style={{ transitionDelay: "360ms" }}>
+            <div className="industry-icon">
+              <DollarSign />
+            </div>
+            <h3>Finance</h3>
+            <p>Secure financial applications and data analytics tools</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="home-section home-tech-stack">
+        <div className="section-header">
+          <span>Technology</span>
+          <h2>We use technology that is built to last</h2>
+          <p className="section-subtext">
+            Modern, scalable tech stack ensuring robust and future-proof solutions
+          </p>
+        </div>
+        <div className="tech-stack-grid">
+          <div className="tech-category reveal-on-scroll" style={{ transitionDelay: "0ms" }}>
+            <h3>Frontend</h3>
+            <div className="tech-items">
+              {techLogos.filter(tech => tech.category === "Frontend").map((tech) => (
+                <div key={tech.name} className="tech-item">
+                  <Image
+                    src={tech.src}
+                    alt={tech.name}
+                    width={32}
+                    height={32}
+                    className="tech-logo"
+                  />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="tech-category reveal-on-scroll" style={{ transitionDelay: "120ms" }}>
+            <h3>Backend</h3>
+            <div className="tech-items">
+              {techLogos.filter(tech => tech.category === "Backend").map((tech) => (
+                <div key={tech.name} className="tech-item">
+                  <Image
+                    src={tech.src}
+                    alt={tech.name}
+                    width={32}
+                    height={32}
+                    className="tech-logo"
+                  />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="tech-category reveal-on-scroll" style={{ transitionDelay: "240ms" }}>
+            <h3>Mobile</h3>
+            <div className="tech-items">
+              {techLogos.filter(tech => tech.category === "Mobile").map((tech) => (
+                <div key={tech.name} className="tech-item">
+                  <Image
+                    src={tech.src}
+                    alt={tech.name}
+                    width={32}
+                    height={32}
+                    className="tech-logo"
+                  />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="tech-category reveal-on-scroll" style={{ transitionDelay: "360ms" }}>
+            <h3>Database</h3>
+            <div className="tech-items">
+              {techLogos.filter(tech => tech.category === "Database").map((tech) => (
+                <div key={tech.name} className="tech-item">
+                  <Image
+                    src={tech.src}
+                    alt={tech.name}
+                    width={32}
+                    height={32}
+                    className="tech-logo"
+                  />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
 
